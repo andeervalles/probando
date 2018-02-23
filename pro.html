@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+  <script src="js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css">
+
+  <style type="text/css">
+  	.hidden {
+     visibility: hidden;
+	}
+
+	.mostrar {
+    visibility: visible ;
+	}
+
+
+	
+	}
+  </style>
+<script>
+
+$(document).ready(cargar);
+
+function cargar(){
+	
+	$( "#mostrarr" ).prop( "disabled", true );
+	$("#caja").addClass("hidden");
+	$("#caja").slideUp();
+	$("#mostrar").click(function(){
+		if($("#mostrar").val() == "Mostrar"){
+			$( "#mostrarr" ).prop( "disabled", false );
+			$("#caja").removeClass();
+			$("#caja").slideDown(1000,function(){
+
+					$("#mostrar").val("Ocultar");
+				});
+
+			
+		}
+		else{
+			$( "#mostrarr" ).prop( "disabled", true );
+			$("#caja").slideUp(1000,function(){
+				$("#mostrar").val("Mostrar");
+				
+			});
+		}
+	});
+
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<input id="mostrar" class="btn btn-primary"  type="submit" style="margin-top: 90px; " value="Mostrar">
+	<input id="mostrar" class="btn btn-primary"  type="submit" style="margin-top: 90px; " value="Mostrar">
+	<input id="mostrarr" class="btn btn-primary"  type="submit" style="margin-top: 90px; " value="Mostrar">
+	<button class="btn btn-outline-danger btn-lg"><i class="fab fa-youtube"></i></button>
+	<button class="btn btn-outline-primary btn-lg"><i class="fab fa-facebook"></i></button>
+
+	<div class="alert alert-danger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	qn
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem</div>
+<div id="caja" class="hidden" style="border: 2px solid black; margin-top: 9px;">
+  <h4 >Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <hr>
+ 
+</div>
+
+
+
+
+
+
+
+</div>
+</body>
+
+</html>
